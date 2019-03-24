@@ -2,9 +2,9 @@
 from classifier import *
 import pandas as pd
 
-nacion_unida = pd.read_json('nacion_unida.json')
+data = pd.read_csv('heraldo_test.csv')
 
 clf = SentimentClassifier()
 
-for index, row in nacion_unida.head().iterrows():
+for index, row in data.head().iterrows():
     print(row['text'] + ' ==> %.5f' % clf.predict(row['text']))
