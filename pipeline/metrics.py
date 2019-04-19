@@ -6,7 +6,6 @@ import twitter_functions as tw
 if __name__ == '__main__':
 
 	data = pd.read_json('./manual_news.json')
-	print(data)
 
 	# Sentiment pretrained analysis
 
@@ -27,6 +26,7 @@ if __name__ == '__main__':
 	creds = tw.load_credentials()
 
 	for index, row in data.iterrows():
+		print(row['title'])
 
 		str_search = row['url']
 		query = tw.generate_query(str_search)
@@ -40,4 +40,21 @@ if __name__ == '__main__':
 
 		print(query_df)
 
+		"""if not query_df.empty:
 
+			user_followers = []
+			for index, row in data.iterrows():
+				followers = tw.get_followers(creds, row['user'])
+				user_followers.append([row['user'], followers])
+
+			user_followers = pd.DataFrame(user_followers, columns=['user', 'followers'])
+
+			query_df = pd.merge(query_df, user_followers, on='user')
+
+			print('uwu' * 30)
+			print(query_df)
+			print('uwu' * 30)
+
+		else:
+
+			pass"""

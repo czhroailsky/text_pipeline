@@ -5,32 +5,48 @@ import json
 import os
 
 
-source = ['quinto_poder', 'sol_de_mexico', 'vanguardia']
-dates = ['2019-04-06', '2019-04-06', '2019-04-06']
-title = ['“Yo no trago de sus impuestos”, así arremete diputada del PES contra ciudadanos', 
-	'Diputada del PES dice que no "traga" de los impuestos de los mexicanos', 
-	'Diputada del PES se defiende en redes sociales: Yo no trago de sus impuestos, sino de mi marido']
-text = ["""La diputada del PES, Nay Salvatori, causó controversia en Twitter luego de que asegurara que “no traga de los impuestos de los ciudadanos, ya que su trabajo lo hace por amor a México. 
-	Salvatori es conocida porque sus mensajes en redes sociales suelen desatar el debate y esta vez no fue la excepción. “No se confundan, yo no ‘trago’ como dicen ustedes de sus impuestos, yo ‘trago’ de mi marido, afortunadamente trabajo por amor a mi país no por necesidad”, escribió.
-	Desde luego que su mensaje provocó toda clase de reacciones en redes sociales, la mayoría fueron críticas. En los últimos días, Salvatori también trae pelito con Javier Lozano, a quien lo llamó “burro”, después de que el exlegislador publicara un cartón que hacía referencia a las contrataciones del gobierno actual.
-	¿Qué opinas del comentarios de la diputada del Partido Encuentro Social?""",
-	"""La diputada abrió la polémica al ofrecerse a pagar la deuda de una actriz. 
-	A pesar de ganar 74 mil 548 pesos mensuales que provienen de recursos públicos, Nayeli Salvatori Bojalil, diputada federal del Partido Encuentro Social (PES), aseguró que no “traga” de los impuestos de los mexicanos sino del dinero que proviene de su marido.
-	Dicha aseveración la hizo a través de su cuenta de twitter tras responder a sus comentarios de ofrecerse a pagar la deuda que supuestamente tiene la actriz Laisha Wilkins con un carpintero.
-	No se confundan, yo no “trago” como dicen ustedes de sus impuestos, yo “trago” de mi marido –Mario Montero Rosano, hijo de Mario Montero, ex secretario de Gobernación estatal en el sexenio priista de Mario Marín-, afortunadamente trabajo por amor a mi país no por necesidad”, expuso en uno de los mensajes difundidos en redes sociales la mañana de este sábado.
-	En consecuencia, surgieron expresiones de usuarios que en su mayoría la criticaron: “Entonces renuncie a su sueldo, diputada. ¡A ver si tanto amor”, “¡O que lo done a gente que necesita ayuda, si viene a presumirnos que su esposo lo mantiene y el sueldo que recibe del país le es indiferente, pues que haga algo bueno con él, al fin que dinero le sobra”, “¡Ya quítenle el celular a esta pseudeodiputada, cada vez se hunde más!”.
-	Mensualmente percibe 74 mil 500 pesos mensuales desde su ingreso a la Cámara de Diputados en septiembre de 2018.""",
-	"""En varios tuits, sus seguidores le exigieron respeto, porque ellos son sus patrones y sus jefes y con sus impuestos se paga su salario.
-	Una vez más la diputada federal de Encuentro Social, Nay Salvatori, está envuelta en la polémica cuando a través de su cuenta en la red social de Twitter, les dijo a sus opositores que no se confundieran, pues ella no "traga" de sus impuestos, sino "traga" de su marido.
-	En un mensaje que subió este sábado, la legisladora por el estado de Puebla, agregó que ella afortunadamente trabaja por amor a su país, y no por necesidad.
-	"No se confundan, yo no 'trago' como dicen ustedes de sus impuestos, yo 'trago' de mi marido, afortunadamente trabajo por amor a mi país no por necesidad", describió.
-	Esto después de que en varios tuits, sus seguidores le exigieron respeto, porque ellos son sus patrones y sus jefes y con sus impuestos se paga su salario.
-	Antes, en otro mensaje, dijo que ella se debe a los electores del Distrito 10, pues ellos sí votaron por ella y obtuvo la votación más alta del estado, y de ellos sí es empleada.
-	"Yo me debo al Distrito 10 que fue el que me votó y por cierto con la votación más alta en el Estado, de ellos si soy empleada si no perteneces a dicho distrito #Telocico", dijo."""]
-author = ['', 'Marco A. Mirón', '']
-url = ['https://quinto-poder.mx/trendy/yo-no-trago-de-sus-impuestos-asi-arremete-diputada-del-pes-contra-ciudadanos/', 
-	'https://www.elsoldemexico.com.mx/doble-via/virales/asegura-nay-salvatori-que-no-traga-de-los-impuestos-de-los-mexicanos-laisha-wilkins-mario-marin-mario-montero-rosano-don-filiberto-puebla-diputada-3286583.html', 
-	'https://vanguardia.com.mx/articulo/diputada-del-pes-se-defiende-en-redes-sociales-yo-no-trago-de-sus-impuestos-sino-de-mi']
+source = ['nacion_unida', 'bbc', 'milenio']
+
+dates = ['2019-04-19', '2019-01-04', '2019-04-19']
+
+title = ['AMLO: En 3 años vamos a tener hospitales y medicinas como las hay en Suecia y Canadá…', 
+	'AMLO y la salud en México: cómo son los servicios de salud de Reino Unido, Canadá o Dinamarca que AMLO pone como ejemplo', 
+	'El sistema de salud será como el de Suecia o Canadá, reitera AMLO']
+
+text = ["""El Presidente Andrés Manuel Lóрez Obrador рrevió esta mañana que México tendrá en tres años un sistema de salud como el de los рaíses nórdicos o el de Canadá. Reiteró que si se les debe se les рagará a los médicos residentes.
+	MÉXICO.— “Yo creo que en 3 años la atención médica y medicamentos van a ser gratuitos рara todos los mexicanos, y vamos a tener un servicio de salud igual que el de los рaíses nórdicos, Dinamarca, Suecia, igual que el de Canadá”, aseveró.
+	Sin embargo dijo que es un рroceso que debe ir рoco a рoco, рorque hay, рor ejemрlo, 80 hosрitales que dejaron sin terminar, con un avance del 30 рor ciento.
+	“Tenemos que atender esto, decidir qué hosрitales terminar, cuándo terminarlos, qué hosрitales necesitan con más urgencia ser equiрados, resolver el abasto de medicamentos”, indicó.
+	“No рuedo hacerlo de la noche a la mañana, рorque va a imрlicar mejorar las 20 mil unidades médicas rurales; va imрlicar que funcionen todos los servicios de salud de segundo nivel”, añadió y dijo que también va a imрlicar mejorar el servicio y el abasto de medicinas.
+	“Que no se vuelva a usar ni si quiera la рalabra cuadro básico”, sostuvo.
+	Aseguró que se busca garantizar seguridad social desde la “cuna hasta la tumba”.
+	Previó que habrá oрosición рorque quisieran que “siguiera la anarquía, el desorden, рorque ellos sacan рrovecho”.
+	Esta mañana, el Jefe del Ejecutivo Federal fue cuestionado sobre el рosible рaro al que han llamado médicos residentes del рaís ante el retraso de los рagos de sus becas y el reembolso de un bono que les fue retenido.
+	Recalcó que si a los médicos residentes se les debe, se les va a рagar. Aseguró que este mismo lunes se atenderá este asunto, y no рor рresión, sino рor convicción del Gobierno de México.
+	“Es un asunto de рrinciрios рara nosotros, nosotros no рodemos traicionarnos a nosotros mismos. Tenemos que cumрlir, y ya he dicho: no рagar o retener el salario es рecado”, aseguró.""",
+
+	"""Es un objetivo ambicioso, pero el presidente Andrés Manuel López Obrador se fijó un plazo de dos años para que México cuente con "un sistema de salud como el que tienen en Canadá, el Reino Unido o en Dinamarca".
+	Pero, ¿cómo funcionan los sistemas de salud de esos países, descritos como "de lo mejor" por AMLO?
+	La guerra de los sistemas de salud
+	Al asumir el ambicioso compromiso, el mandatario dio algunas pistas, al destacar lo costoso que pueden ser algunos tratamientos para los mexicanos.
+	"El cuadro básico, debemos desaparecer eso, ya ni lo voy a mencionar. El enfermo, el paciente debe tener todos los medicinamientos", dijo el jueves durante la inauguración de unas oficinas del Instituto Mexicano del Seguro Social (IMSS) en Michoacán.
+	"Es una pena que sí se le da a una medicina que está en el cuadro básico, ¿pero si no está? 140.000 pesos un medicamento contra el cáncer, ¿de dónde lo va a sacar una persona humilde?, ¿qué vamos hacer, mandarlo a su casa?", se preguntó AMLO.
+	Y el acceso efectivo de todos los mexicanos a servicios de calidad es otro de los retos del Sistema Nacional de Protección Social en Salud que el nuevo mandatario prometió reformar durante la campaña.
+	La cobertura en México aumentó significativamente en el país luego de la introducción del Seguro Popular en 2004, pero está lejos de ser universal como en el caso de Reino Unido, Canadá y Dinamarca.
+	Aquí te explicamos algunas de las principales características de los servicios de esos países, utilizados como ejemplo por AMLO.""",
+
+	""" El Presidente se comprometió a pagar los adeudos a los médicos residentes, a priorizar la terminación de hospitales que heredaron y a garantizar el abasto de medicamentos. 
+	El presidente Andrés Manuel López Obrador reiteró el compromiso de que en tres años, el sistema de salud de México será como los países nórdicos, en el que todos tendrán acceso a servicio médico y medicamentos de calidad gratuitos.
+	“En tres años la atención médica y los medicamentos van a ser gratuitos y va a ser como un sistema nórdico, igual que Suecia o Canadá. No puedo hacerlo de la noche a la mañana porque va a implicar mejorar las 20 mil clínicas rurales y todo el tiradero de hospitales.
+	“Ya comenzamos pero vamos a ir poco a poco para hacerlo de manera ordenada porque algunos quisieran que siguiera la anarquía porque ellos sacaban provecho pero se va a acabar”, dijo en conferencia de prensa.
+	Recordó que heredó al menos 80 clínicas y hospitales inconclusos en el país que deberán terminar según la prioridad de cada zona, mientras que más de 80 mil trabajadores están laborando por honorarios desde año, sin contar con la corrupción en la compra de medicamentos que permitía muchas fugas de recursos y por ende, desabasto. Dijo que algunos hospitales tienen un avance de 30 por ciento, por lo que el gobierno federal priorizará aquellos que pueden terminarse a la brevedad y aquellos que más urgen por falta de clínicas o la lejanía de éstas en algunas zonas del país. El Presidente reiteró su compromiso de federalizar el sistema de salud para que sea de calidad como en los países nórdicos, tal como lo prometió desde su campaña. López Obrador dijo que aquellos médicos residentes recibirán sus sueldo y no habrá más retraso en los pagos de nómina “y no por la presión” de las manifestaciones, sino porque es un derecho, es justicia y es parte del nuevo sistema de este gobierno.
+	"""]
+
+author = ['', '', 'Jannet López Ponce']
+
+url = ['https://nacionunida.com/2019/04/16/amlo-en-3-anos-vamos-tener-hospitales-y-medicinas-como-las-hay-en-suecia-y-canada/', 
+	'https://www.bbc.com/mundo/noticias-america-latina-46762130', 
+	'https://www.milenio.com/politica/amlo-reitera-compromiso-anos-sistema-salud-nordico']
 
 all_files = os.listdir('./')
 
