@@ -77,11 +77,9 @@ def get_followers(creds, user):
                     screen_names.append(u['screen_name'])
 
                 success = True
-                time.sleep(300)
 
             except:
                 print('Waiting rate limit ...')
-                time.sleep(300)
                 success = False
 
     return(screen_names)

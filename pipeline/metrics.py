@@ -1,5 +1,5 @@
 # Imports
-from classifier import *
+#from classifier import *
 import pandas as pd 
 import twitter_functions as tw
 
@@ -9,7 +9,7 @@ if __name__ == '__main__':
 
 	# Sentiment pretrained analysis
 
-	snt_metric = []
+	"""snt_metric = []
 
 	for index, row in data.iterrows():
 
@@ -19,7 +19,7 @@ if __name__ == '__main__':
 		snt_metric.append([row['id'], predicted])
 
 	snt_metric = pd.DataFrame(snt_metric, columns=['id', 'snt_predicted'])
-	print(snt_metric)
+	print(snt_metric)"""
 
 	# Twitter network
 
@@ -37,8 +37,25 @@ if __name__ == '__main__':
 		query_df = pd.concat([query_df, tw.generate_dataframe(creds, query)])
 
 		query_df = query_df.drop_duplicates(subset=['user'])
+		print(query_df.info())
 
-		print(query_df)
+		if not query_df.empty:
+
+			user_followers = []
+			n = 0
+			for index, row in query_df.iterrows():
+				if n <= 10: 
+					followers = tw.get_followers(creds, row['user'])
+					user_followers.append([row['user'], followers])
+				else:
+					pass
+
+			user_followers = pd.DataFrame(user_followers, columns=['user', 'followers'])
+			print(user_followers)
+
+		else:
+
+			print('nothing_to_see')
 
 		"""if not query_df.empty:
 
