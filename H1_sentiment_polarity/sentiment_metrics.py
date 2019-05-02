@@ -2,6 +2,8 @@
 import pandas as pd
 from classifier import *
 from nltk.corpus import stopwords
+import es_core_news_md as spacy_es_model
+import string
 
 if __name__ == '__main__':
 
@@ -48,10 +50,49 @@ if __name__ == '__main__':
 
 	data['text_process'] = data['text'].apply(lambda x: x.replace('\n', '').replace('\t', ''))
 	data['text_process'] = data['text_process'].apply(lambda x: x.lower())
+	data['text_process'] = data['text_process'].apply(lambda x: x.translate(str.maketrans('', '', string.punctuation)))
+	data['text_process'] = data['text_process'].apply(lambda x: x.replace('”', '').replace('“', ''))
 	data['text_process'] = data['text_process'].apply(lambda x: str(x).split(' '))
 	data['text_process'] = data['text_process'].apply(lambda x: [word for word in x if word not in stopwords.words('spanish')])
+
+	## Lexicon words
+
 	data['text_positive'] = data['text_process'].apply(lambda x: [ w for w in x if w in positive ])
 	data['text_negative'] = data['text_process'].apply(lambda x: [ w for w in x if w in negative ])
 
-	print(data['text_positive'])
-	print(data['text_negative'])
+	print(data)
+
+	## POS tagging
+
+	nlp = spacy_es_model.load(parser=False, entity=False)
+
+	print('\n----- Positive -----')
+	for index, row in data.iterrows():
+		print(row['title'])
+		for w in row['text_positive']:
+			print(w)
+			w_index = row['text_process'].index(w)
+			if w_index > 0:
+				print([row['text_process'][w_index - 1] , row['text_process'][w_index], row['text_process'][w_index + 1]])
+			else:
+				print([row['text_process'][w_index], row['text_process'][w_index + 1]])
+
+	print('\n----- Negative -----')
+	for index, row in data.iterrows():
+		print(row['title'])
+		for w in row['text_negative']:
+			print(w)
+			w_index = row['text_process'].index(w)
+			if w_index > 0:
+				print([row['text_process'][w_index - 1] , row['text_process'][w_index], row['text_process'][w_index + 1]])
+			else:
+				print([row['text_process'][w_index], row['text_process'][w_index + 1]])
+		
+		#doc = nlp(' '.join(row['text_process']))
+
+		#print('\n' + row['title'])
+
+		#for token in doc:
+			#if str(token) in row['text_positive']:
+				#print(row['text_process'].index(str(token)))
+				#print(token.text, token.lemma_, token.pos_, token.tag_, token.dep_, token.shape_, token.is_alpha, token.is_stop)
