@@ -1,6 +1,6 @@
 # Imports
 import pandas as pd
-from classifier import *
+#from classifier import *
 from nltk.corpus import stopwords
 import es_core_news_md as spacy_es_model
 import string
@@ -11,8 +11,8 @@ if __name__ == '__main__':
 
 	data = pd.read_json(PATH + 'manual_news_01.json')
 
-	print('--------------- Scores with senti_py -----------------')
-
+	print('--------------- Scores with senti-py -----------------')
+	"""
 	sentiment = []
 
 	for index, row in data.iterrows():
@@ -28,7 +28,7 @@ if __name__ == '__main__':
 	data = pd.merge(data, snt_metric, on='id')
 
 	print(data)
-
+	"""
 	
 	print('\n----------------- Lexicon -------------------')
 
@@ -63,7 +63,7 @@ if __name__ == '__main__':
 	print(data)
 
 	## POS tagging
-
+	"""
 	nlp = spacy_es_model.load(parser=False, entity=False)
 
 	print('\n----- Positive -----')
@@ -87,7 +87,7 @@ if __name__ == '__main__':
 				print([row['text_process'][w_index - 1] , row['text_process'][w_index], row['text_process'][w_index + 1]])
 			else:
 				print([row['text_process'][w_index], row['text_process'][w_index + 1]])
-		
+	"""
 		#doc = nlp(' '.join(row['text_process']))
 
 		#print('\n' + row['title'])
