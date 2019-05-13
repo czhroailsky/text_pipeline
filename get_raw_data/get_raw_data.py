@@ -5,7 +5,9 @@ import json
 import os
 
 
-title = ["""Empresa vetada por AMLO de licitaciones de medicamentos consigue amparo""",
+title = [
+	"""AMLO buscará proveedores extranjeros para garantizar abasto de medicamentos para VIH""",
+	"""Empresa vetada por AMLO de licitaciones de medicamentos consigue amparo""",
 	"""AMLO buscará proveedores extranjeros para garantizar abasto de medicamentos para VIH""",
 	"""Amparan a empresa por 'veto' de AMLO""",
 	"""'Veto' a proveedoras daña competencia.-Coparmex""",
@@ -26,7 +28,19 @@ title = ["""Empresa vetada por AMLO de licitaciones de medicamentos consigue amp
 	"""De las promesas a las metas medibles: las claves del plan de seguridad de AMLO"""
 	]
 
-text = ["""
+text = [
+	"""
+	Tras la manifestación de ciudadanos y asociaciones civiles como el Movimiento Nacional de Lucha contra el VIH (Virus de Inmunodeficiencia Humana) por la escasez de antirretrovirales y otros medicamentos controlados para pacientes con el virus, en la conferencia mañanera de este viernes 3 de mayo, AMLO prometió que habrá medicamentos para los pacientes y, además, el gobierno buscará otras opciones de proveedores en el extranjero —todo con la ayuda de los propios civiles.
+
+	De acuerdo con AMLO, el único proveedor que lleva la concesión para estos medicamentos impone un par de condiciones para su venta, por lo que lo exhortó para que no jueguen “a las vencidas”: “Porque no van a faltar los medicamentos, los vamos a comprar en cualquier país del mundo“.
+
+	Aunque el mandatario no dio un nombre en específico, sí se refirió a una de las tres empresas que vendía al IMSS (Instituto Mexicano del Seguro Social) y el ISSSTE (Instituto de Seguridad y Servicios Sociales de los Trabajadores del Estado). La venta estaba por 35 mil millones de pesos en medicamentos. Y ante la escasez de los medicamentos y las demandas de los pacientes, el gobierno se mantendrá en contacto con esta empresa.
+
+	En el centro de la ciudad, integrantes del Movimiento Nacional de Lucha contra el VIH se manifestaron el día de ayer en la Estela de Luz, en las inmediaciones de la Secretaría de Salud, precisamente por la escasez de antirretrovirales en distintos estados del país como Oaxaca, Chihuahua, Tabasco, Veracruz y Baja California.
+
+	Y mientras esto sucedía, el IMSS denunció el robo de medicamentos antirretrovirales para VIH, en el Hospital General de Zona 29 del IMSS (Instituto Mexicano del Seguro Social), acentuando la gravedad de este caso.
+	""",
+	"""
 	Luego de que AMLO instruyó a la Oficial Mayor de la Secretaría de Hacienda impedir que tres empresas sigan –supuestamente– acaparando todas las ventas al IMSS y al ISSSTE (es decir, descansarlas de las licitaciones), una de ellas acudió ante las autoridades y ahora logró un amparo contra el mandato del Ejecutivo.
 
 	De acuerdo con Reforma, la empresa Grupo Fármacos Especializados (Grufesa) no se quedó tan conforme con eso de ya no poder participar en la licitación para la compra de medicamentos que alista el gobierno federal y por ello solicitó un amparo… el cual ya le fue concedido por el juez Décimo de Distrito en Materia Administrativa, Francisco Migoni Goslinga.
