@@ -5,3 +5,5 @@ manual_news.json
 .DS_Store
 *.json
 *.txt
+*.csv
+*.ipynb
