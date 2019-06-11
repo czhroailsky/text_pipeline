@@ -10,6 +10,9 @@ import metrics_functions as mf
 
 from classifier import *
 
+import plotly.offline as py
+import plotly.graph_objs as go
+
 PATH = './full_dataset/'
 
 if __name__ == '__main__':
@@ -119,11 +122,117 @@ if __name__ == '__main__':
 
 		CA_sch = mf.crawford_age(OP, SP)
 
-		readability.append([FS_index, FH_read, GP_com, MM_read, CA_sch])
+		readability.append([index, FS_index, FH_read, GP_com, MM_read, CA_sch])
 
-	readability = pd.DataFrame(readability, columns=['FS_index', 'FH_read', 'GP_com', 'MM_read', 'CA_sch'])
+
+	readability = pd.DataFrame(readability, columns=['id', 'FS_index', 'FH_read', 'GP_com', 'MM_read', 'CA_sch'])
+	readability.set_index('id', inplace=True)
 	
-	print(data.head())
-	print(data.info())
-	print(readability.head())
-	print(readability.info())
+	data = pd.concat([data, readability], axis=1)
+
+	## Source distribution
+
+	sources = sorted(list(data['source'].unique()))
+	
+	all_FS_index = []
+	all_FH_read = []
+	all_gp_com = []
+	all_mm_read = []
+	all_ca_sch = []
+	for s in sources:
+		space = data[data['source'] == s]
+
+		fs_index_aux = sorted(space['FS_index'].tolist())
+		all_FS_index.append(fs_index_aux)
+
+		fh_read_aux = sorted(space['FH_read'].tolist())
+		all_FH_read.append(fh_read_aux)
+
+		gp_com_aux = sorted(space['GP_com'].tolist())
+		all_gp_com.append(gp_com_aux)
+
+		mm_read_aux = sorted(space['MM_read'].tolist())
+		all_mm_read.append(mm_read_aux)
+
+		ca_sch_aux = sorted(space['CA_sch'].tolist())
+		all_ca_sch.append(ca_sch_aux)
+
+	data = []
+	n = 0
+	for fs in all_FS_index:
+		trace = go.Scatter(
+			x = list(range(len(fs))),
+			y = fs,
+			mode = 'lines+markers',
+			name = sources[n]
+			)
+		data.append(trace)
+		n += 1
+
+	layout = dict(title = 'Flesch-szigriszt index (perspecuidad)')
+	fig = dict(data=data, layout=layout)
+	py.plot(fig, filename=PATH + 'images/' + 'FS_index.html')
+
+	data = []
+	n = 0
+	for fh in all_FH_read:
+		trace = go.Scatter(
+			x = list(range(len(fh))),
+			y = fh,
+			mode = 'lines+markers',
+			name = sources[n]
+			)
+		data.append(trace)
+		n += 1
+
+	layout = dict(title = 'Fernandez-Huerta (lecturabilidad)')
+	fig = dict(data=data, layout=layout)
+	py.plot(fig, filename=PATH + 'images/' + 'FH_read.html')
+
+	data = []
+	n = 0
+	for gp in all_gp_com:
+		trace = go.Scatter(
+			x = list(range(len(gp))),
+			y = gp,
+			mode = 'lines+markers',
+			name = sources[n]
+			)
+		data.append(trace)
+		n += 1
+
+	layout = dict(title = 'Gutierrèz de Polini (comprensibilidad)')
+	fig = dict(data=data, layout=layout)	
+	py.plot(fig, filename=PATH + 'images/' + 'GP_com.html')
+
+	data = []
+	n = 0
+	for mm in all_mm_read:
+		trace = go.Scatter(
+			x = list(range(len(mm))),
+			y = mm,
+			mode = 'lines+markers',
+			name = sources[n]
+			)
+		data.append(trace)
+		n += 1
+
+	layout = dict(title = "Muñoz-Muñoz (readability)")
+	fig = dict(data=data, layout=layout)
+	py.plot(fig, filename=PATH + 'images/' + 'MM_read.html')
+
+	data = []
+	n = 0
+	for ca in all_ca_sch:
+		trace = go.Scatter(
+			x = list(range(len(ca))),
+			y = ca,
+			mode = 'lines+markers',
+			name = sources[n]
+			)
+		data.append(trace)
+		n += 1
+
+	layout = dict(title = "Crawford's scolarship")
+	fig = dict(data=data, layout=layout)
+	py.plot(fig, filename=PATH + 'images/' + 'CA_sch.html')
