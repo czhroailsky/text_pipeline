@@ -130,8 +130,10 @@ if __name__ == '__main__':
 	
 	data = pd.concat([data, readability], axis=1)
 
-	## Source distribution
+	print(data['source'].value_counts())
 
+	## Source distribution
+	"""
 	sources = sorted(list(data['source'].unique()))
 	
 	all_FS_index = []
@@ -236,3 +238,4 @@ if __name__ == '__main__':
 	layout = dict(title = "Crawford's scolarship")
 	fig = dict(data=data, layout=layout)
 	py.plot(fig, filename=PATH + 'images/' + 'CA_sch.html')
+	"""
