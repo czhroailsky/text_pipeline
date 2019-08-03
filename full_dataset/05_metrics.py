@@ -132,6 +132,8 @@ if __name__ == '__main__':
 
 	print(data['source'].value_counts())
 
+	data.to_csv('./full_dataset/news_csv/all_sources_readability.csv', index=False)
+
 	## Source distribution
 	"""
 	sources = sorted(list(data['source'].unique()))
